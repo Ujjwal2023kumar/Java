@@ -39,12 +39,12 @@ public class bitMan {
         return count;
     }
     public static void main(String[] args) {
-        System.out.println(5 & 6);  // AND
-        System.out.println(5 | 6);  // OR
-        System.out.println(5 ^ 6);  // XOR
-        System.out.println(~ 5); // Complement
-        System.out.println(5<<2); // Binary Left shift
-        System.out.println(5>>2); // Binary Right shift
+        System.out.println(5 & 6);  // AND operation 
+        System.out.println(5 | 6);  // OR operation
+        System.out.println(5 ^ 6);  // XOR operation
+        System.out.println(~ 5); // Complement operation
+        System.out.println(5<<2); // Binary Left shift operation
+        System.out.println(5>>2); // Binary Right shift operation
 
         oddOrEven(9);
         System.out.println(getIthBit(10, 2)); //0
