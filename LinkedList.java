@@ -13,6 +13,7 @@ public class LinkedList {
 
     private Node head;
     private Node tail;
+    private int size = 0;
 
     // Add to the front
     public void addFirst(int data){
@@ -23,6 +24,7 @@ public class LinkedList {
             newNode.next = head;
             head = newNode;
         }
+        size++;
     }
 
     // Add to the end
@@ -34,102 +36,84 @@ public class LinkedList {
             tail.next = newNode;
             tail = newNode;
         }
+        size++;
     }
 
     // Add in the Middle
     public void addMid(int data, int index){
+        if (index < 0 || index > size) {
+            System.out.println("Index out of bounds");
+            return;
+        }
+
+        if (index == 0) {
+            addFirst(data);
+            return;
+        }
+
+        if (index == size) {
+            addLast(data);
+            return;
+        }
+
         Node p = head;
-        Node newNode = new Node(data);
-        for(int i =0; i<index; i++){
+        for(int i = 0; i < index - 1; i++){
             p = p.next;
         }
+
+        Node newNode = new Node(data);
         newNode.next = p.next;
         p.next = newNode;
-        newNode.data = data;
+        size++;
     }
 
-    //Size of linked list 
+    // Return current size
     public int size(){
-        Node temp = head;
-        int count = 0;
-        while(temp!= null){
-            temp = temp.next;
-            count++;
-        }
-        return count;
+        return size;
     }
 
-    //Remove from the front
+    // Remove from the front
     public void removeFront(){
         if(head == null){
             System.out.println("No element to remove");
             return;
         }
         head = head.next;
-        return;
+        size--;
+        if (head == null) {
+            tail = null;
+        }
     }
 
-    //Remove from the end
+    // Remove from the end
     public void removeEnd(){
         if(head == null){
             System.out.println("No element to remove");
             return;
         }
-        Node temp = head;
-        while(temp.next != tail){
-            temp = temp.next;
+
+        if (head == tail) {
+            head = tail = null;
+        } else {
+            Node temp = head;
+            while(temp.next != tail){
+                temp = temp.next;
+            }
+            temp.next = null;
+            tail = temp;
         }
-        temp.next = null;
-        tail = temp; 
+        size--;
     }
 
     // Print the linked list
     public void print(){
         Node temp = head;
         while(temp != null){
-            System.out.print(temp.data + " ");
+            System.out.print(temp.data + "->");
             temp = temp.next;
         }
-        System.out.println();
-    }
-
-    //Search interative
-    public int searchIterative(int key){
-        Node temp = head;
-        int index = 0;
-        while (temp != null) {
-            if (temp.data == key) {
-                return index;
-            }
-            temp = temp.next;
-            index++;
-        }
-        return -1; // Not found
-    }
-    
-    // Wrapper method for searchRecursive
-    public int searchRecursive(int key) {
-        return helper(head, key);
-    }
-
-    // Actual recursive helper
-    public int helper(Node head, int key) {
-        if (head == null) {
-            return 0; // Reached end without finding
-        }
-        if (head.data == key) {
-            return 0; // Found the target
-        }
-        int index = helper(head.next, key);
-        if(index == -1){
-            return -1;
-        }
-        return index+1;
-    }
-
-    public void printReverse(){ //Iterative Approach 
-        
-    }
+        System.out.println("null");
+    }    
 
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
@@ -152,41 +136,19 @@ public class LinkedList {
         System.out.print("After addLast(4): ");
         ll.print();
 
-        //Add in the middle
-        ll.addMid(2,3);
-        System.out.print("After addMin(2,2): ");
+        // Add in the middle
+        ll.addMid(2, 3);
+        System.out.print("After addMid(2, 3): ");
         ll.print();
 
-        //Size of linked list
-        System.out.println("Size of linked list: " + ll.size());
-
-        //remove from the front
+        // Remove from the front
         ll.removeFront();
         System.out.print("After removeFront(): ");
         ll.print();
 
-        //remove from the end
+        // Remove from the end
         ll.removeEnd();
         System.out.print("After removeEnd(): ");
         ll.print();
-
-        //search iterative
-        int key = 2;
-        int result = ll.searchIterative(key);
-        if (result != -1) {
-            System.out.println("Element " + key + " found at index: " + result);
-        } else {
-            System.out.println("Element " + key + " not found in the list.");
-        }
-
-        //search recursive
-        int result2 = ll.searchIterative(key);
-        if (result2 != -1) {
-            System.out.println("Element " + key + " found at index: " + result2);
-        } else {
-            System.out.println("Element " + key + " not found in the list.");
-        }
-
-        //Print reverse of linked list
     }
 }
