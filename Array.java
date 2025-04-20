@@ -1,5 +1,3 @@
-package Arrays;
-
 public class Array {
 
     // Function to update all elements in the array by +1
