@@ -1,4 +1,3 @@
-package Arrays2D;
 import java.util.*;
 public class Array2D {
     public static void printSpiral(int matrix2[][]){
