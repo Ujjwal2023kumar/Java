@@ -1,4 +1,3 @@
-package Basics;
 public class Basic {
     public static void main(String[] args) {
         binaryToDecimal(100101);
