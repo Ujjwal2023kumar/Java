@@ -1,5 +1,3 @@
-package DivideConquer;
-
 public class DivideConquer {
     public static void printArr(int arr[]){
         for(int i=0; i< arr.length;i++){
