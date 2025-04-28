@@ -1,5 +1,3 @@
-package LinkedList;
-
 public class LinkedList3 {
     public static class Node {
         int data;
