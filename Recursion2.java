@@ -1,5 +1,3 @@
-package Recursion;
-
 public class Recursion2 {
     public static int tilingProblem(int n){
         if(n==0 || n==1){ //base
