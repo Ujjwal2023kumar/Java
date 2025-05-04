@@ -1,4 +1,3 @@
-package Sortings;
 import java.util.*;
 public class Sorting {
     public static void bubbleSort(int arr[]){
