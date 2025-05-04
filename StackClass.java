@@ -1,5 +1,3 @@
-package Stacks;
-
 public class StackClass {
     public static class Node {
         int data;
