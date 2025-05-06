@@ -1,4 +1,3 @@
-package Stacks;
 import java.util.*;
 public class StackClass2 {
     static class Stack{
