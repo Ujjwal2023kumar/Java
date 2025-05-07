@@ -1,4 +1,3 @@
-package Strings;
 public class StringBasic {
     public static void printLetters(String firstName){
         for(int i =0 ; i< firstName.length(); i++){
