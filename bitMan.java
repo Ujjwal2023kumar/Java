@@ -1,5 +1,3 @@
-package BitManipulation;
-
 public class bitMan {
     public static void oddOrEven(int n){
         int bitMask = 1;
