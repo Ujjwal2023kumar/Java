@@ -1,4 +1,3 @@
-package Strings;
 public class stringBuilder {
     public static String toUpperCase(String str){
         StringBuilder sb1 = new StringBuilder("");
