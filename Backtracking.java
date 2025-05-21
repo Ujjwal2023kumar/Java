@@ -4,7 +4,7 @@ public class Backtracking{
             printArr(arr);
             return;
         }
-        // recursion
+        // recursion process
         arr[i] = val;
         changeArr(arr, i+1, val+1); // fnx call step
         arr[i] = arr[i] - 2; //backtracking step
