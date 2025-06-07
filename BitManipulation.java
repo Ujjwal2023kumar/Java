@@ -1,4 +1,4 @@
-public class bitMan {
+public class BitManipulation {
     public static void oddOrEven(int n){
         int bitMask = 1;
         if((n & bitMask) == 0){
