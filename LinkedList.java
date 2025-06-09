@@ -13,7 +13,7 @@ public class LinkedList {
     private Node tail;
     private int size = 0;
 
-    // Add to the front
+    // Add to the first
     public void addFirst(int data){
         Node newNode = new Node(data);
         if (head == null) {
