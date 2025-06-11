@@ -169,7 +169,7 @@ public class Array {
         System.out.println(maxSum);
     }
 
-    // Trapping Rainwater 
+    // Trapping Rainwater Problem
     public static void trappedRainwater(int height[]){
         int n = height.length;
         // calculate left max boundary -array
