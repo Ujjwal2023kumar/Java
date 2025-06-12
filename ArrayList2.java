@@ -36,7 +36,7 @@ public class ArrayList2 {
         return maxWater;
     }
 
-    // 3. Optimized 2-pointer approach
+    // 3. Optimized Two pointer approach
     public static int maxWaterTwoPointer(ArrayList<Integer> height) {
         int maxWater = 0;
         int lp = 0;
