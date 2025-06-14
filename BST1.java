@@ -1,3 +1,3 @@
 public class BST1 {
-    public 
+    public static
 }
