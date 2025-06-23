@@ -1,3 +1,3 @@
 public class BST2 {
-    public static void main
+    public static void main(String[]
 }
