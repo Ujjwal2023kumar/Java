@@ -1,3 +1,3 @@
 public class DP4 {
-    public 
+    public static
 }
