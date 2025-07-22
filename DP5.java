@@ -1,3 +1,3 @@
 public class DP5 {
-    public static void
+    public static void main
 } 
