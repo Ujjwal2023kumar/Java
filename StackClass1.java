@@ -1,4 +1,4 @@
-public class StackClass {
+public class StackClass1 {
     public static class Node {
         int data;
         Node next;
@@ -57,3 +57,4 @@ public class StackClass {
         System.out.println("Peek: " + s.peek()); // Should now print 3
     }
 }
+
