@@ -128,6 +128,17 @@ public class _27BST {
 
         return root;
     }
+    public static Node balancedBST(int arr[], int st, int end){
+        if(st > end){
+            return null;
+        }
+        int mid = (st + end)/2;
+        Node root = new Node(arr[mid]);
+        root.left = balancedBST(arr, st, mid - 1);
+        root.right = balancedBST(arr, mid + 1, end);
+
+        return root;
+    }
     public static void main(String[] args) {
         //Binary Search Tree
 
@@ -174,7 +185,18 @@ public class _27BST {
         }
         
         //Mirror BST
+        System.out.print("Mirror of BST: ");
         mirrorBST(root);
         inorder(root);
+        System.out.println();
+
+        //Sorted Array to Balanced BST
+        System.out.print("Sorted Array to Balanced BST: ");
+        int arr[] = {3,5,6,8,10,11,12};
+        Node root1 = balancedBST(arr, 0, arr.length-1);
+        inorder(root1);
+
+        //Convert BST into balanced BST
+        
     }
 }
