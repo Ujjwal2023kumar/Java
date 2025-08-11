@@ -139,6 +139,44 @@ public class _27BST {
 
         return root;
     }
+    public static void getInorder(Node root, ArrayList<Integer> inorder){
+        if(root == null){
+            return;
+        }
+        getInorder(root.left, inorder);
+        inorder.add(root.data);
+        getInorder(root.right, inorder);
+    }
+    public static Node createBST(ArrayList<Integer> inorder, int st, int end){
+        if(st > end){
+            return null;
+        }
+        int mid = (st + end)/2;
+        Node root = new Node(inorder.get(mid));
+        root.left = createBST(inorder, st, mid - 1);
+        root.right = createBST(inorder, mid + 1, end);
+        return root;
+    }
+    public static Node bstToBalancedBST(Node root){
+        ArrayList<Integer> inorder = new ArrayList<>();
+        getInorder(root, inorder);
+
+        root = createBST(inorder, 0, inorder.size()-1);
+        return root;
+    }
+    static class Info{
+        boolean isBST;
+        int size;
+        int min;
+        int max;
+
+        public Info(boolean isBST, int size, int min, int max){
+            this.isBST = isBST;
+            this.size = size;
+            this.min = min;
+            this.max = max;
+        }
+    }
     public static void main(String[] args) {
         //Binary Search Tree
 
@@ -195,8 +233,29 @@ public class _27BST {
         int arr[] = {3,5,6,8,10,11,12};
         Node root1 = balancedBST(arr, 0, arr.length-1);
         inorder(root1);
+        System.out.println();
 
         //Convert BST into balanced BST
-        
+        Node root2 = new Node(8);
+        root2.left = new Node(6);
+        root2.left.left = new Node(5);
+        root2.left.left.left = new Node(3);
+        root2.right = new Node(10);
+        root2.right.right = new Node(11);
+        root2.right.right.right = new Node(12);
+        System.out.print("BST To Balanced BST: ");
+        root2 = bstToBalancedBST(root2);
+        inorder(root2);
+
+        //Size of Largest BST in binary tree
+        Node root3 = new Node(50);
+        root3.left = new Node(30);
+        root3.left.left = new Node(5);
+        root3.left.right = new Node(20);
+        root3.right = new Node(60);
+        root3.right.left = new Node(45);
+        root3.right.right = new Node(70);
+        root3.right.right.left = new Node(65);
+        root3.right.right.right = new Node(80);
     }
 }
