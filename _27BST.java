@@ -177,6 +177,58 @@ public class _27BST {
             this.max = max;
         }
     }
+    public static int maxBST = 0;
+    public static Info largestBST(Node root){
+        if(root == null){
+            return new Info(true, 0, Integer.MAX_VALUE, Integer.MIN_VALUE);
+        }
+
+        Info leftInfo = largestBST(root.left);
+        Info rightInfo = largestBST(root.right);
+        int size = leftInfo.size + rightInfo.size + 1;
+        int min = Math.min(root.data, Math.min(leftInfo.min, rightInfo.min));
+        int max = Math.max(root.data, Math.max(leftInfo.max, rightInfo.max));
+
+        if(root.data <= leftInfo.max || root.data >= rightInfo.min){
+            return new Info(false, size, min, max);
+        }
+
+        if(leftInfo.isBST && rightInfo.isBST){
+            maxBST = Math.max(maxBST, size);
+            new Info(true, size, min, max);
+        }
+
+        return new Info(false, size, min, max);
+    }
+    public static Node merge2BST(Node root4, Node root5){
+
+        ArrayList<Integer> arr1 = new ArrayList<>();
+        getInorder(root4, arr1);
+        ArrayList<Integer> arr2 = new ArrayList<>();
+        getInorder(root5, arr2);
+
+        //merge
+        int i = 0, j = 0;
+        ArrayList<Integer> finalArr = new ArrayList<>();
+        while(i<arr1.size() && j<arr2.size()){
+            if(arr1.get(i) <= arr2.get(i)){
+                finalArr.add(arr1.get(i));
+                i++;
+            }else{
+                finalArr.add(arr2.get(j));
+                j++;
+            }
+        }
+        while(i<arr1.size()){
+            finalArr.add(arr1.get(i));
+            i++;
+        }
+        while(j<arr2.size()){
+            finalArr.add(arr2.get(j));
+            j++;
+        }
+        return createBST(finalArr, 0, finalArr.size()-1);
+    }
     public static void main(String[] args) {
         //Binary Search Tree
 
@@ -246,6 +298,7 @@ public class _27BST {
         System.out.print("BST To Balanced BST: ");
         root2 = bstToBalancedBST(root2);
         inorder(root2);
+        System.out.println();
 
         //Size of Largest BST in binary tree
         Node root3 = new Node(50);
@@ -257,5 +310,19 @@ public class _27BST {
         root3.right.right = new Node(70);
         root3.right.right.left = new Node(65);
         root3.right.right.right = new Node(80);
+        Info info = largestBST(root3);
+        System.out.println("Largest BST size: " + maxBST);
+
+        //Merge 2 BST
+        Node root4 = new Node(2);
+        root4.left = new Node(1);
+        root4.right = new Node(4);
+        Node root5 = new Node(9);
+        root5.left = new Node(3);
+        root5.right = new Node(12);
+        System.out.print("Merge 2 BST: ");
+        Node root6 = merge2BST(root4, root5);
+        inorder(root6);
+        System.out.println();
     }
 }
