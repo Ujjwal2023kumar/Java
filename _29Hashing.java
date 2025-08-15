@@ -1,13 +1,10 @@
 import java.util.*;
-
 public class _29Hashing {
-
     public static List<Integer> majorityElement(int arr[]) {
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int num : arr) {
             map.put(num, map.getOrDefault(num, 0) + 1);
         }
-
         List<Integer> result = new ArrayList<>();
         for (Integer key : map.keySet()) {
             if (map.get(key) > arr.length / 3) {
@@ -15,6 +12,26 @@ public class _29Hashing {
             }
         }
         return result;
+    }
+    public static boolean isValidAnangram(String s, String t){
+        HashMap<Character, Integer> map = new HashMap<>();
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            map.put(ch, map.getOrDefault(s.charAt(i), 0) + 1);
+        }
+        for (int i = 0; i < t.length(); i++) {
+            char ch = s.charAt(i);
+            if(map.get(ch) != null){
+                if(map.get(ch) == 1){
+                    map.remove(ch);
+                }else{
+                    map.put(ch, map.get(ch)-1);
+                }
+            }else{
+                return false;
+            }
+        }
+        return map.isEmpty();
     }
 
     public static void main(String[] args) {
@@ -62,5 +79,10 @@ public class _29Hashing {
         System.out.print("Majority Element(s): ");
         int arr[] = {1, 3, 2, 5, 1, 3, 1, 5, 1};
         System.out.println(majorityElement(arr));
+
+        //Valid Anangram
+        System.out.print("Valid Anangram: ");
+        String s = "race"; String t = "care";
+        System.out.println(isValidAnangram(s,t));
     }
 }
