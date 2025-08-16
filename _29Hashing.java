@@ -81,8 +81,15 @@ public class _29Hashing {
         System.out.println(majorityElement(arr));
 
         //Valid Anangram
-        System.out.print("Valid Anangram: ");
+        System.out.print("Is Valid Anangram: ");
         String s = "race"; String t = "care";
         System.out.println(isValidAnangram(s,t));
+
+        //
+        HashSet<Integer> set = new HashSet<>();
+        set.add(1); set.add(2);
+        set.add(4); set.add(2);
+        set.add(1); 
+        System.out.println(set);
     }
 }
