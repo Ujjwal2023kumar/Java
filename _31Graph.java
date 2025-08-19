@@ -1,8 +1,5 @@
 import java.util.*;
-
 public class _31Graph {
-
-    // -------------------- Graph Representation -------------------- //
     static class Edge {
         int src, dest, wt;
         Edge(int s, int d, int w) {
@@ -11,7 +8,6 @@ public class _31Graph {
             this.wt = w;
         }
     }
-
     static void createGraph(ArrayList<Edge>[] graph, int V) {
         for (int i = 0; i < V; i++) graph[i] = new ArrayList<>();
         // Example Graph
@@ -32,8 +28,6 @@ public class _31Graph {
         graph[5].add(new Edge(5, 6, 1));
         graph[6].add(new Edge(6, 5, 1));
     }
-
-    // -------------------- BFS -------------------- //
     public static void bfs(ArrayList<Edge>[] graph, int V) {
         Queue<Integer> q = new LinkedList<>();
         boolean vis[] = new boolean[V];
@@ -48,8 +42,6 @@ public class _31Graph {
         }
         System.out.println();
     }
-
-    // -------------------- DFS -------------------- //
     public static void dfs(ArrayList<Edge>[] graph, int curr, boolean vis[]) {
         System.out.print(curr + " ");
         vis[curr] = true;
@@ -57,8 +49,6 @@ public class _31Graph {
             if (!vis[e.dest]) dfs(graph, e.dest, vis);
         }
     }
-
-    // -------------------- Path Check -------------------- //
     public static boolean hasPath(ArrayList<Edge>[] graph, int src, int dest, boolean vis[]) {
         if (src == dest) return true;
         vis[src] = true;
@@ -67,8 +57,6 @@ public class _31Graph {
         }
         return false;
     }
-
-    // -------------------- Connected Components -------------------- //
     public static void connectedComponents(ArrayList<Edge>[] graph, int V) {
         boolean vis[] = new boolean[V];
         for (int i = 0; i < V; i++) {
@@ -78,8 +66,6 @@ public class _31Graph {
             }
         }
     }
-
-    // -------------------- Cycle Detection (Undirected) -------------------- //
     public static boolean detectCycleUndirected(ArrayList<Edge>[] graph, int curr, int par, boolean vis[]) {
         vis[curr] = true;
         for (Edge e : graph[curr]) {
@@ -89,8 +75,6 @@ public class _31Graph {
         }
         return false;
     }
-
-    // -------------------- Bipartite Graph -------------------- //
     public static boolean isBipartite(ArrayList<Edge>[] graph, int V) {
         int col[] = new int[V];
         Arrays.fill(col, -1);
@@ -113,8 +97,6 @@ public class _31Graph {
         }
         return true;
     }
-
-    // -------------------- Cycle Detection (Directed) -------------------- //
     public static boolean detectCycleDirected(ArrayList<Edge>[] graph, int V) {
         boolean vis[] = new boolean[V];
         boolean stack[] = new boolean[V];
@@ -136,8 +118,6 @@ public class _31Graph {
         stack[curr] = false;
         return false;
     }
-
-    // -------------------- Topological Sort (DFS) -------------------- //
     public static void topoSortDFS(ArrayList<Edge>[] graph, int V) {
         boolean vis[] = new boolean[V];
         Stack<Integer> st = new Stack<>();
@@ -154,8 +134,6 @@ public class _31Graph {
         }
         st.push(curr);
     }
-
-    // -------------------- Topological Sort (BFS - Kahn’s Algo) -------------------- //
     public static void topoSortBFS(ArrayList<Edge>[] graph, int V) {
         int indeg[] = new int[V];
         for (int i = 0; i < V; i++) {
@@ -175,38 +153,21 @@ public class _31Graph {
         System.out.println();
     }
 
-    // -------------------- MAIN -------------------- //
     public static void main(String[] args) {
         int V = 7;
         ArrayList<Edge>[] graph = new ArrayList[V];
         createGraph(graph, V);
 
-        System.out.println("=== BFS ===");
-        bfs(graph, V);
-
-        System.out.println("=== DFS ===");
-        dfs(graph, 0, new boolean[V]);
+        System.out.print("BFS: ");  bfs(graph, V);
+        System.out.print("DFS: "); dfs(graph, 0, new boolean[V]);
         System.out.println();
-
-        System.out.println("=== Has Path (0->5)? " + hasPath(graph, 0, 5, new boolean[V]));
-
-        System.out.println("\n=== Connected Components ===");
-        connectedComponents(graph, V);
-
-        System.out.println("\n=== Cycle Detection (Undirected) ===");
-        System.out.println(detectCycleUndirected(graph, 0, -1, new boolean[V]));
-
-        System.out.println("\n=== Bipartite Graph ===");
-        System.out.println(isBipartite(graph, V));
-
-        System.out.println("\n=== Cycle Detection (Directed) ===");
-        System.out.println(detectCycleDirected(graph, V));
-
-        System.out.println("\n=== Topological Sort (DFS) ===");
-        topoSortDFS(graph, V);
-
-        System.out.println("\n=== Topological Sort (BFS - Kahn) ===");
-        topoSortBFS(graph, V);
+        System.out.println("Has Path (0->5)? " + hasPath(graph, 0, 5, new boolean[V]));
+        System.out.print("Connected Components: "); connectedComponents(graph, V);
+        System.out.println("Cycle Detection (Undirected): " + detectCycleUndirected(graph, 0, -1, new boolean[V]));
+        System.out.println("Bipartite Graph: " + isBipartite(graph, V));
+        System.out.println("Cycle Detection (Directed): " + detectCycleDirected(graph, V));
+        System.out.print("Topological Sort (DFS): "); topoSortDFS(graph, V);
+        System.out.print("Topological Sort (BFS - Kahn): "); topoSortBFS(graph, V);
 
         // TODO: Add
         // All Paths Source->Target
