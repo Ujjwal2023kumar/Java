@@ -1,4 +1,4 @@
-public class _1Basic {
+public class _01Basic {
     public static void binaryToDecimal(int n) {
         int pow = 0;
         int decimal = 0;
@@ -76,3 +76,4 @@ public class _1Basic {
         System.out.println("Using optimized method: " + result2);
     }
 }
+
