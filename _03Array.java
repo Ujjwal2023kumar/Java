@@ -1,5 +1,4 @@
 import java.util.*;
-
 public class _3Array{
 
     // Function to update all elements in the array by +1
@@ -8,7 +7,6 @@ public class _3Array{
             arr[i] += 1;
         }
     }
-
     // Function to print the array
     public static void printArray(int arr[]) {
         for (int num : arr) {
@@ -16,7 +14,6 @@ public class _3Array{
         }
         System.out.println();
     }
-
     // Linear Search
     public static int linearSearch(int arr[], int target) {
         for (int i = 0; i < arr.length; i++) {
@@ -26,7 +23,6 @@ public class _3Array{
         }
         return -1;
     }
-
     // Binary Search (Recursive)
     public static int binarySearch(int arr[], int low, int high, int target) {
         if (low > high) return -1;
@@ -38,28 +34,24 @@ public class _3Array{
         else
             return binarySearch(arr, mid + 1, high, target);
     }
-
     public static int getLargest(int arr[]) {
         int largest = Integer.MIN_VALUE;
         for (int num : arr)
             if (num > largest) largest = num;
         return largest;
     }
-
     public static int getSmallest(int arr[]) {
         int smallest = Integer.MAX_VALUE;
         for (int num : arr)
             if (num < smallest) smallest = num;
         return smallest;
     }
-
     public static void printSearchResult(String type, int index, int target) {
         if (index == -1)
             System.out.println(type + " Search: Target " + target + " not found.");
         else
             System.out.println(type + " Search: Target " + target + " found at index: " + index);
     }
-
     public static void reverseArr(int arr[]) {
         int i = 0, j = arr.length - 1;
         while (i < j) {
@@ -70,7 +62,6 @@ public class _3Array{
             j--;
         }
     }
-
     public static void printPairs(int arr[]) {
         for (int i = 0; i < arr.length - 1; i++) {
             for (int j = i + 1; j < arr.length; j++) {
@@ -79,7 +70,6 @@ public class _3Array{
             System.out.println();
         }
     }
-
     public static void printSubarrays(int arr[]) {
         for (int i = 0; i < arr.length; i++) {
             for (int j = i; j < arr.length; j++) {
@@ -91,7 +81,6 @@ public class _3Array{
             System.out.println();
         }
     }
-
     public static void printMaxSubarrays1(int arr[]) {
         int maxSum = Integer.MIN_VALUE;
         for (int i = 0; i < arr.length; i++) {
@@ -105,7 +94,6 @@ public class _3Array{
         }
         System.out.println("Max Subarray Sum (Brute Force): " + maxSum);
     }
-
     public static void printMaxSubarrays2(int arr[]) {
         int n = arr.length;
         int[] prefix = new int[n];
@@ -123,7 +111,6 @@ public class _3Array{
         }
         System.out.println("Max Subarray Sum (Prefix): " + maxSum);
     }
-
     public static void printMaxSubarrays3(int arr[]) {
         int maxSum = Integer.MIN_VALUE, currSum = 0;
         for (int value : arr) {
@@ -133,7 +120,6 @@ public class _3Array{
         }
         System.out.println("Max Subarray Sum (Kadane's): " + maxSum);
     }
-
     public static void trappedRainwater(int height[]) {
         int n = height.length;
         int[] leftMax = new int[n];
@@ -156,7 +142,6 @@ public class _3Array{
 
         System.out.println("Trapped Rainwater: " + trappedWater);
     }
-
     public static void printSpiral(int[][] matrix) {
         int startRow = 0, startCol = 0, endRow = matrix.length - 1, endCol = matrix[0].length - 1;
 
@@ -180,7 +165,6 @@ public class _3Array{
         }
         System.out.println();
     }
-
     public static int diagonalSum(int[][] matrix) {
         int sum = 0;
         for (int i = 0; i < matrix.length; i++) {
@@ -191,7 +175,6 @@ public class _3Array{
         }
         return sum;
     }
-
     public static void staircaseSearch(int[][] matrix, int key) {
         int row = 0, col = matrix[0].length - 1;
         while (row < matrix.length && col >= 0) {
@@ -206,7 +189,6 @@ public class _3Array{
         }
         System.out.println("Key not found!");
     }
-
     public static void main(String[] args) {
         int arr[] = {1, 2, 3, 4, 5};
         int arr2[] = {-2, -3, 4, -1, -2, 1, 5, -3};
