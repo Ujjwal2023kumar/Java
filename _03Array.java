@@ -1,5 +1,5 @@
 import java.util.*;
-public class _3Array{
+public class _03Array{
 
     // Function to update all elements in the array by +1
     public static void updateNum(int arr[]) {
@@ -255,3 +255,4 @@ public class _3Array{
         sc.close();
     }
 }
+
