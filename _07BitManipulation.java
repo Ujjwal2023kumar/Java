@@ -1,4 +1,4 @@
-public class _7BitManipulation {
+public class _07BitManipulation {
     public static void oddOrEven(int n){
         int bitMask = 1;
         if((n & bitMask) == 0){
@@ -52,3 +52,4 @@ public class _7BitManipulation {
         System.out.println(countSetBits(7));
     }
 }
+
