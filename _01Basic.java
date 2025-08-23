@@ -1,4 +1,5 @@
 public class _01Basic {
+    
     public static void binaryToDecimal(int n) {
         int pow = 0;
         int decimal = 0;
@@ -11,6 +12,7 @@ public class _01Basic {
         }
         System.out.println(originalN + " is converted into " + decimal);
     }
+
     public static void decimalToBinary(int n) {
         int binary = 0;
         int place = 1;
@@ -23,12 +25,14 @@ public class _01Basic {
         }
         System.out.println(originalN1 + " is converted into " + binary);
     }
+
     public static int fact(int n) {
         if (n == 0 || n == 1) {
             return 1;
         }
         return n * fact(n - 1);
     }
+
     public static boolean isprimeNo(int n) {
         if (n <= 1) {
             return false;
@@ -40,6 +44,7 @@ public class _01Basic {
         }
         return true;
     }
+
     public static boolean isprimeO(int n) {
         if (n <= 1) {
             return false;
@@ -54,6 +59,7 @@ public class _01Basic {
         }
         return true;
     }
+
     public static void reverseNumber(int n) {
         int reverseNum = 0;
         int originalN4 = n; 
@@ -64,6 +70,7 @@ public class _01Basic {
         }
         System.out.println(originalN4 + " is reversed into " + reverseNum);
     }
+
     public static void main(String[] args) {
         binaryToDecimal(100101);
         decimalToBinary(5);
@@ -76,4 +83,3 @@ public class _01Basic {
         System.out.println("Using optimized method: " + result2);
     }
 }
-
