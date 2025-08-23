@@ -1,5 +1,5 @@
 import java.util.*;
-public class _4Sorting {
+public class _04Sorting {
     public static void bubbleSort(int arr[]){
         for(int i=0;i<arr.length-1;i++){
             for(int j=0;j<arr.length-1-i;j++){
@@ -86,3 +86,4 @@ public class _4Sorting {
         System.out.println();
     }
 }
+
