@@ -1,4 +1,4 @@
-public class _5String {
+public class _05String {
     public static void printLetters(String firstName){
         for(int i =0 ; i< firstName.length(); i++){
             System.out.print(firstName.charAt(i) + " ");
@@ -59,3 +59,4 @@ public class _5String {
         largestString(fruits);
     }
 }
+
