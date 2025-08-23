@@ -1,4 +1,4 @@
-public class _2Pattern {
+public class _02Pattern {
     
     // 1. Right-Angled Triangle of Stars
     public static void pattern1(int n) {
@@ -215,3 +215,4 @@ public class _2Pattern {
         pattern13(n);
     }
 }
+
