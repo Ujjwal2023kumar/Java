@@ -1,4 +1,4 @@
-public class _6StringBuilder {
+public class _06StringBuilder {
     public static String toUpperCase(String str){
         StringBuilder sb1 = new StringBuilder("");
         
@@ -42,3 +42,4 @@ public class _6StringBuilder {
         System.out.println(compress(str));
     }
 }
+
