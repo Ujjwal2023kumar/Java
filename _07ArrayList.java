@@ -1,6 +1,5 @@
 import java.util.*;
-
-public class _12ArrayList {
+public class _07ArrayList {
     public static ArrayList<Integer> initializeList(int n) {
         ArrayList<Integer> list = new ArrayList<>();
         for (int i = 1; i <= n; i++) {
