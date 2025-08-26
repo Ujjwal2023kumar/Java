@@ -1,4 +1,4 @@
-public class _9Recursion {
+public class _09Recursion {
     public static int factorial(int n){
         if(n==1){
             return 1;
