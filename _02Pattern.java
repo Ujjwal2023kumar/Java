@@ -1,5 +1,5 @@
 public class _02Pattern {
-    
+
     // 1. Right-Angled Triangle of Stars
     public static void pattern1(int n) {
         for (int i = 1; i <= n; i++) {
@@ -9,6 +9,7 @@ public class _02Pattern {
             System.out.println();
         }
     }
+
     // 2. Right-Aligned Triangle of Stars
     public static void pattern2(int n) {
         for (int i = 1; i <= n - 1; i++) {
@@ -21,6 +22,7 @@ public class _02Pattern {
             System.out.println();
         }
     }
+
     // 3. Descending Number Triangle
     public static void pattern3(int n) {
         for (int i = n; i >= 1; i--) {
@@ -30,6 +32,7 @@ public class _02Pattern {
             System.out.println();
         }
     }
+
     // 4. Ascending Number Triangle
     public static void pattern4(int n) {
         for (int i = 1; i <= n - 1; i++) {
@@ -39,6 +42,7 @@ public class _02Pattern {
             System.out.println();
         }
     }
+
     // 5. Downward Triangle of Stars
     public static void pattern5(int n) {
         for (int i = n - 1; i > 0; i--) {
@@ -48,6 +52,7 @@ public class _02Pattern {
             System.out.println();
         }
     }
+
     // 6. Hollow Square with Stars on Border
     public static void pattern6(int n) {
         for (int i = 1; i <= n - 1; i++) {
@@ -61,6 +66,7 @@ public class _02Pattern {
             System.out.println();
         }
     }
+
     // 7. Incremental Numbers in a Triangle
     public static void pattern7(int n) {
         int num = 1;
@@ -71,6 +77,7 @@ public class _02Pattern {
             System.out.println();
         }
     }
+
     // 8. Alternating 0s and 1s in a Triangle
     public static void pattern8(int n) {
         for (int i = 0; i <= n; i++) {
@@ -84,6 +91,7 @@ public class _02Pattern {
             System.out.println();
         }
     }
+
     // 9. Alphabetic Triangle
     public static void pattern9(int n) {
         char ch = 'A';
@@ -94,6 +102,7 @@ public class _02Pattern {
             System.out.println();
         }
     }
+
     // 10. Butterfly Pattern
     public static void pattern10(int n) {
         // 1st half
@@ -129,6 +138,7 @@ public class _02Pattern {
             System.out.println("");
         }
     }
+
     // 11. Solid Rhombus
     public static void pattern11(int n) {
         for (int i = 1; i <= n; i++) {
@@ -141,6 +151,7 @@ public class _02Pattern {
             System.out.println("");
         }
     }
+
     // 12. Hollow Rhombus
     public static void pattern12(int n) {
         for (int i = 1; i <= n; i++) {
@@ -159,6 +170,7 @@ public class _02Pattern {
             System.out.println("");
         }
     }
+
     // 13. Diamond Pattern
     public static void pattern13(int n) {
         for (int i = 1; i <= n; i++) {
@@ -215,4 +227,3 @@ public class _02Pattern {
         pattern13(n);
     }
 }
-
