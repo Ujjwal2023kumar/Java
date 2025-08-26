@@ -55,7 +55,7 @@ public class _06BitManipulation {
         oddOrEven(10);
         System.out.println();
 
-        System.out.println("=== Bit Manipulation ===");
+        System.out.println("==== Bit Manipulation ====");
         int n = 10;
         System.out.println("Binary of " + n + " = " + Integer.toBinaryString(n));
         System.out.println("Get 2nd bit of " + n + " = " + getIthBit(n, 2));
@@ -74,3 +74,4 @@ public class _06BitManipulation {
         System.out.println("Set bits in " + x + " = " + countSetBits(x));
     }
 }
+
