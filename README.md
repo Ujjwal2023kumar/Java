@@ -3,7 +3,7 @@ Welcome to the Java DSA Problems repository! This repository contains solutions 
 These problems cover a wide range of topics to help you strengthen your problem-solving skills.
 
 ## FEATURES
-- Comprehensive Coverage: Arrays, Linked Lists, Trees, Graphs, Sorting, Searching, Dynamic Programming, and more.
+- Comprehensive Coverage: Arrays, Linked Lists, Trees, Graphs, Sorting, Searching and Dynamic Programming.
 - Optimized Solutions: Focus on efficiency with both time and space complexity considerations.
 - Easy to Understand: Well-documented code with comments for clarity.
 
